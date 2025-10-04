@@ -1,0 +1,140 @@
+:root {
+  --white: #fffbfb;
+  --grey: #f0eef1;
+  --black: #050505;
+  --red: #ff7070;
+  --light-green: #9fff9c;
+  --light-red: #ff9c9c;
+  --border-radius: 8px;
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 40px;
+  --container-width: 1200px;
+  --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    word-wrap: break-word;
+    margin-bottom: 100px;
+}
+
+/*####################################
+                HEADER
+####################################*/
+
+
+.header{
+    background-color: beige;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 200px;
+    align-items: center;
+}
+
+/*####################################
+                MAIN
+####################################*/
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 250px));
+  grid-template-rows: minmax(300px, auto);
+  justify-content: center;
+  align-items: center;
+  border: 2px solid#ff7070;
+  gap: 1rem;
+  width:100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.card{
+  background-color: #9fff9c;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1rem 2.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden; /*Hide long text*/
+  overflow-wrap: anywhere;
+  background-color:  hsla(0, 0%, 100%, 50%);
+  box-shadow: 1px 1px 10px hsla(0, 0%, 0%, 0.3);
+}
+
+.card-title, .card-author, .card-pages,.closeBth,
+ .class-checkbox,.card-checkbox-label,.card-btn, h3{
+  margin: 0;
+}
+
+/*####################################
+                FORM SECTION
+####################################*/
+
+/* Always visible*/
+.newBookBtn{
+  display: flex;
+}
+
+/* MODALS */
+
+.modal {
+  display: none; /*Hide form*/
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color:  hsla(0, 0%, 100%, 50%);
+  background-color: #ff7070;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+}
+
+.modal.active{
+  display: flex; 
+}
+
+
+.add-book-form{
+  position: relative;
+  background-color: hsla(0, 0%, 100%, 100%);
+  background-color: #9fff9c;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: min-content;
+  z-index: 2;
+  border-radius: 1rem;
+}
+
+
+
+
+/*####################################
+                FOOTER
+####################################*/
+
+
+footer {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
