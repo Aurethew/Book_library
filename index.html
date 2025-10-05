@@ -14,7 +14,6 @@
         <div class="container">
             <h1>Library</h1>
             <button id="button" class="newBookBtn">+ Add new book</button>
-
         </div>
     </header>
 
@@ -22,23 +21,21 @@
     <main class="main">
         <!-- Dummy card for styling -->
         <!-- <div class="card">
-            <h3>Add new book</h3>
-            <div class="closeBtn" id="closeFormBtn">X</div>
+            <div class="closeBtn" id="closeFormBtn"><img src="./images/close-btn.svg" /></div>
             <h2 class="card-title">The Hobbit</h2>
             <p class="card-author">JJR TOL</p>
             <p class="card-pages">500 pages</p>
             <input class="class-checkbox" type="checkbox" name="checkbox">
-            <button class="card-btn"><img class="card-btn-svg"> Add book</button>
+            <div class="card-btn"><img src="./images/delete.svg" /></div>
         </div> -->
         <div class="books"></div>
     </main>
 
     <!-- Modal for new book -->
     <section class="modal" id="modal">
-        <form class="add-book-form" id="addBookForm">
-            <h3>Add new book</h3>
+        <form class="book-form" id="addBookForm">
             <!-- Close Btn-->
-            <div class="closeBtn" id="closeFormBtn">X</div>
+            <div class="closeBtn" id="closeFormBtn"><img src="./images/close-btn.svg" /></div>
             <!-- Title -->
             <input class="input" type="text" id="title" placeholder="Title" required maxlength="100" />
             <!-- Trigger error if already present -->
@@ -46,11 +43,11 @@
             <!-- No of pages -->
             <input class="input" type="number" id="number" placeholder="Pages" required maxlength="10000" />
 
-            <div class="is-read">
+            <div class="checkbox-container">
                 <label for="is-read">Have you read it?</label>
-                <input class="checkbox" type="checkbox" id="is-read" />
+                <input type="checkbox" id="checkbox-is-read" />
             </div>
-            <button class="btn btn-light-green" type="submit">Add book</button>
+            <button class="btn btn-submit" type="submit">Add book</button>
 
         </form>
     </section>

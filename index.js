@@ -44,17 +44,22 @@ function removeBook(index) {
 
 //Function to render the books in the library/page 
 function renderBooks() {
+    if(!bookCard){
+        console.error("Missing .books element in DOM");
+        return;
+    }
+
     bookCard.innerHTML = ''; //Clear the current list
     myLibrary.forEach((book, index) => {
         const bookList = document.createElement('section');
         bookList.classList.add('card');
 
         bookList.innerHTML = `
-    <h3>${book.title}</h3>
+    <h2>Title: ${book.title}</h2>
     <p>Author: ${book.author}</p>
     <p>Pages: ${book.pages}</p>
     <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
-    <button class="remove-btn" data-index="${index}">Remove</button>
+    <div class="remove-btn" "><img src="./images/delete.svg" /></div>
     `;
 
         //Append book card to list 
@@ -77,7 +82,7 @@ addBookForm.addEventListener('submit', (e) => {
     const bookTitle = document.getElementById('title').value;
     const bookAuthor = document.getElementById('author').value;
     const bookPages = document.getElementById('number').value;
-    const bookIsRead = document.getElementById('is-read').checked;
+    const bookIsRead = document.getElementById('checkbox-is-read').checked;
 
     // Create new book to library 
     const newBook = new Book(bookTitle, bookAuthor, bookPages, bookIsRead);
@@ -90,7 +95,7 @@ addBookForm.addEventListener('submit', (e) => {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('number').value = '';
-    document.getElementById('is-read').checked = false;
+    document.getElementById('checkbox-is-read').checked = false;
 
 
     //Reset form
@@ -103,6 +108,7 @@ addBookForm.addEventListener('submit', (e) => {
     //Re-render book list 
     renderBooks();
 });
+
 
 
 
